@@ -1,0 +1,13 @@
+{
+  "name": "skeleton-plus",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Playwright-driven verification for skeleton-plus.css",
+  "scripts": {
+    "test:playwright": "npx playwright test --config=tests/playwright.config.js",
+    "test:playwright:headed": "npx playwright test --headed --config=tests/playwright.config.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0"
+  }
+}

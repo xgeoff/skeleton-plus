@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Skeleton Catalog | Skeleton-plus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../vendor/skeleton.css" />
+    <link rel="stylesheet" href="../../skeleton-plus.css" />
+    <style>
+        .catalog-section {
+            max-width: 1160px;
+            width: min(1120px, 90%);
+            margin: 0 auto;
+            padding: 3.5rem clamp(1.5rem, 6vw, 4rem);
+        }
+
+        .catalog-heading {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .catalog-heading h2 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .catalog-heading hr {
+            flex: 1;
+            border: none;
+            height: 1px;
+            background-color: rgba(15, 23, 42, 0.1);
+            margin: 0;
+        }
+
+        .catalog-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .catalog-card-grid .card {
+            padding: 2rem;
+        }
+
+        .catalog-form-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 960px) {
+            .catalog-form-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .catalog-alert-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 800px) {
+            .catalog-alert-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        .catalog-hero {
+            max-width: 1160px;
+            width: min(1120px, 90%);
+            margin: 0 auto;
+            padding: 3rem clamp(1.5rem, 6vw, 4rem);
+            text-align: left;
+        }
+        .catalog-hero p {
+            margin: 0;
+            max-width: 700px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header-padding">
+        <div class="catalog-hero">
+        <div class="row" style="margin-bottom: 3rem;">
+            <div class="twelve columns">
+                <button onclick="setTheme('default')" id="theme-default" class="btn btn--primary" style="margin-right: 1rem;">Default Slate</button>
+                <button onclick="setTheme('midnight')" id="theme-midnight" class="btn btn--secondary" style="margin-right: 1rem;">Midnight Dark</button>
+                <button onclick="setTheme('forest')" id="theme-forest" class="btn btn--secondary">Forest Green</button>
+            </div>
+        </div>
+        <span class="label-caps">Theming Engine</span>
+        <h1>Design Catalog.</h1>
+        <p class="body-lead">
+            A standalone showcase using only Skeleton (Layout) and Skeleton Plus (Design System).
+            No utility frameworks like Tailwind are used here.
+        </p>
+    </div>
+    </header>
+
+    <hr class="hr-muted">
+
+    <section class="catalog-section">
+        <div class="catalog-heading">
+            <div><h2>Buttons & Controls</h2></div>
+            <hr>
+        </div>
+        <div class="card">
+            <div class="row">
+                <div class="six columns">
+                    <span class="label-caps">Standard Variants</span>
+                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <button class="btn btn--primary">Primary Action</button>
+                        <button class="btn btn--secondary">Secondary</button>
+                        <button class="btn btn--ghost">Ghost Action</button>
+                    </div>
+                </div>
+                <div class="six columns">
+                    <span class="label-caps">Interaction States</span>
+                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <button class="btn btn--secondary" disabled>Disabled</button>
+                        <button class="btn btn--primary is-loading">Loading</button>
+                        <button class="btn btn--danger">Destructive</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog-section">
+        <div class="catalog-heading">
+            <div><h2>Cards & Surfaces</h2></div>
+            <hr>
+        </div>
+        <div class="catalog-card-grid">
+            <div class="card">
+                <h3>Standard</h3>
+                <p style="font-size: 1.4rem;">The base card component adapts its background and border to the theme variables.</p>
+                <button class="btn btn--secondary" style="height: 32px; font-size: 1.2rem;">Learn More</button>
+            </div>
+            <div class="card card--interactive">
+                <div style="width: 40px; height: 40px; background: rgba(99, 102, 241, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                    <div style="width: 16px; height: 16px; background: #6366f1; border-radius: 50%;"></div>
+                </div>
+                <h3>Interactive</h3>
+                <p style="font-size: 1.4rem; margin: 0;">Lifts on hover and indicates clickability with depth transition.</p>
+            </div>
+            <div class="card card--raised">
+                <div style="width: 40px; height: 40px; background: rgba(16, 185, 129, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                    <div style="width: 16px; height: 16px; background: #10b981; border-radius: 4px;"></div>
+                </div>
+                <h3>Raised</h3>
+                <p style="font-size: 1.4rem; margin: 0;">Features a stronger constant shadow for higher visual hierarchy.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog-section">
+        <div class="catalog-heading">
+            <div><h2>Forms & Inputs</h2></div>
+            <hr>
+        </div>
+        <div class="card">
+            <div class="catalog-form-grid">
+                <div>
+                    <div style="margin-bottom: 2rem;">
+                        <label class="label-caps">Full Name</label>
+                        <input type="text" class="input" placeholder="e.g. Julianne Moore">
+                    </div>
+                    <div style="margin-bottom: 2rem;">
+                        <label class="label-caps">Email Address</label>
+                        <input type="email" class="input" placeholder="julianne@example.com">
+                    </div>
+                    <div>
+                        <label class="label-caps">Message</label>
+                        <textarea class="input" style="height: 12rem;" placeholder="How can we help?"></textarea>
+                    </div>
+                </div>
+                <div>
+                    <div style="margin-bottom: 2rem;">
+                        <label class="label-caps">Select Option</label>
+                        <select class="input">
+                            <option>Design Inquiry</option>
+                            <option>Technical Support</option>
+                            <option>General Feedback</option>
+                        </select>
+                    </div>
+                    <div class="card" style="padding: 2.5rem; background: rgba(15, 23, 42, 0.03); border-style: dashed; box-shadow: none; margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1rem;">Pure Skeleton Layout</h4>
+                        <p style="font-size: 1.2rem; margin: 0;">This grid uses the classic 12-column Skeleton system. All styling is applied via Skeleton Plus variables.</p>
+                    </div>
+                    <button class="btn btn--primary" style="width: 100%;">Submit Inquiry</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog-section">
+        <div class="catalog-heading">
+            <div><h2>Feedback & Status</h2></div>
+            <hr>
+        </div>
+        <div class="catalog-alert-grid">
+            <div>
+                <span class="label-caps">Alert Notifications</span>
+                <div class="alert alert--info" style="margin-top: 1rem;">
+                    <span class="dot" style="background: #0ea5e9;"></span>
+                    <p style="font-size: 1.4rem; font-weight: 500; margin: 0; color: var(--sp-text);">Information: System maintenance scheduled.</p>
+                </div>
+                <div class="alert alert--success" style="margin-top: 0.75rem;">
+                    <span class="dot" style="background: #10b981;"></span>
+                    <p style="font-size: 1.4rem; font-weight: 500; margin: 0; color: var(--sp-text);">Success: Changes saved successfully.</p>
+                </div>
+                <div class="alert alert--warning" style="margin-top: 0.75rem;">
+                    <span class="dot" style="background: #f59e0b;"></span>
+                    <p style="font-size: 1.4rem; font-weight: 500; margin: 0; color: var(--sp-text);">Warning: Review pending approvals.</p>
+                </div>
+            </div>
+            <div>
+                <span class="label-caps">Badges & Labels</span>
+                <div style="margin-top: 1.5rem;">
+                    <span class="badge">Beta</span>
+                    <span class="badge badge--info">System Active</span>
+                    <span class="badge badge--success">Verified</span>
+                    <span class="badge badge--warning">Attention</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="section-padding" style="text-align: center; border-top: 1px solid rgba(15, 23, 42, 0.05); margin-top: 5rem;">
+        <p style="font-size: 1.4rem;">© 2025 Skeleton-plus. Powered by Pure HTML & CSS Variables.</p>
+    </footer>
+</div>
+
+<script>
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        const themes = ['default', 'midnight', 'forest'];
+        themes.forEach(t => {
+            const btn = document.getElementById(`theme-${t}`);
+            if (t === theme) {
+                btn.className = 'btn btn--primary';
+            } else {
+                btn.className = 'btn btn--secondary';
+            }
+        });
+    }
+</script>
+</body>
+</html>

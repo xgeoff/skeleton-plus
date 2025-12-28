@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skeleton-plus.css Fixture</title>
+    <link rel="stylesheet" href="../vendor/skeleton.css" />
+    <link rel="stylesheet" href="../../skeleton-plus.css" />
+    <style>
+      body {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      section {
+        max-width: 900px;
+        border: 1px dashed rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+      }
+
+      section h2 {
+        margin-top: 0;
+      }
+
+      .form-grid {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .modal-trigger {
+        margin-top: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h2>Buttons</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+        <button class="btn">Default</button>
+        <button class="btn btn--primary">Primary</button>
+        <button class="btn btn--secondary">Secondary</button>
+        <button class="btn btn--danger">Danger</button>
+        <button class="btn btn--ghost">Ghost</button>
+        <button class="btn is-disabled" disabled>Disabled</button>
+        <button class="btn btn--primary is-loading">Loading</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Forms</h2>
+      <div class="form-grid">
+        <label>
+          <span>Default input</span>
+          <input type="text" class="input" placeholder="Enter text" />
+        </label>
+        <label>
+          <span>Textarea</span>
+          <textarea class="input" rows="3"></textarea>
+        </label>
+        <label>
+          <span>Error state</span>
+          <input type="text" class="input is-error" />
+        </label>
+        <label>
+          <span>Success state</span>
+          <input type="text" class="input is-success" />
+        </label>
+      </div>
+    </section>
+
+    <section>
+      <h2>Cards</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <div class="card">
+          <h3>Default card</h3>
+          <p>This is a simple content container that works with Skeleton spacing.</p>
+        </div>
+        <div class="card card--flat">
+          <h3>Flat card</h3>
+          <p>No shadow but the same structure.</p>
+        </div>
+        <div class="card card--raised">
+          <h3>Raised card</h3>
+          <p>Stronger elevation for emphasis.</p>
+        </div>
+        <div class="card card--interactive">
+          <h3>Interactive card</h3>
+          <p>Hovering lifts it slightly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Badges</h2>
+      <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+        <span class="badge">Default</span>
+        <span class="badge badge--info">Info</span>
+        <span class="badge badge--success">Success</span>
+        <span class="badge badge--warning">Warning</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Alerts</h2>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <div class="alert">Neutral alert with descriptive text.</div>
+        <div class="alert alert--info">Info alert that builds on the accent color.</div>
+        <div class="alert alert--success">Success alert for positive states.</div>
+        <div class="alert alert--error">Error alert to highlight issues.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Disclosure</h2>
+      <details class="disclosure">
+        <summary>Toggle details</summary>
+        <p>Native disclosure behavior with a styled summary.</p>
+      </details>
+    </section>
+
+    <section>
+      <h2>Modal</h2>
+      <div>
+        <p>The modal is hidden by default. The next block shows `.is-open` state.</p>
+        <button class="btn btn--primary modal-trigger" type="button" aria-hidden="true" disabled>
+          Trigger (simulate externally)
+        </button>
+      </div>
+      <div class="modal" aria-modal="true" role="dialog" tabindex="-1">
+        <div class="modal__content">
+          <h3>Hidden modal</h3>
+          <p>This modal represents the default state.</p>
+        </div>
+      </div>
+      <div class="modal is-open" aria-modal="true" role="dialog" tabindex="-1">
+        <div class="modal__content">
+          <h3>Modal content</h3>
+          <p>This is just style scaffolding; JavaScript toggles visibility externally.</p>
+        </div>
+      </div>
+    </section>
+    <script>
+      const modal = document.querySelector('.modal.is-open');
+      modal?.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.classList.toggle('is-open');
+        }
+      });
+    </script>
+  </body>
+</html>
