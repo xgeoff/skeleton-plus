@@ -240,20 +240,34 @@ Uses native `<details>` behavior. No JS required.
 
 ---
 
-## Theming (Optional)
+## Theming
 
-Skeleton-plus supports a **small, optional** set of CSS variables:
+Skeleton-plus ships a default “Slate” palette and example overrides (`data-theme="midnight"`, `data-theme="forest"`) in `skeleton-plus.css`. The catalog fixture toggles themes by setting `data-theme` on `<html>` via a tiny helper, so every component updates automatically because they read from shared CSS variables.
+
+**Add your own theme**
+
+1. Define overrides for your variant:
 
 ```css
-:root {
-  --sp-accent: #3b82f6;
-  --sp-success: #22c55e;
-  --sp-danger: #ef4444;
-  --sp-radius: 4px;
+[data-theme="sunrise"] {
+  --sp-bg: #fff7ed;
+  --sp-text: #4a2511;
+  --sp-text-muted: #7c3b1c;
+  --sp-border: #fed7aa;
+  --sp-accent: #f97316;
+  --sp-accent-hover: #ea580c;
+  --sp-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.12);
+  --sp-shadow-md: 0 6px 12px -2px rgb(0 0 0 / 0.18);
 }
 ```
 
-No token explosion. No required variables.
+2. Toggle it (pattern used in `tests/fixtures/catalog.html`):
+
+```js
+document.documentElement.setAttribute('data-theme', 'sunrise');
+```
+
+All components will adopt the new palette; no component markup changes are required.
 
 ---
 
@@ -288,11 +302,6 @@ If you find yourself wanting:
 
 You probably want something else.
 
----
-
-## Visual Vibe
-
-Skeleton-plus follows the “Soft Tactile Minimalism” direction in `specs/visual-vibe.md`: calm shadows, gentle gradients, and motion used only to clarify interaction. The `specs/3-rule-checklist.md` captures the hard rules (perceptible differences, depth hierarchy, motion tied to affordance) that apply to every component, and the buttons + cards section mirrors the `specs/buttons-and-cards-0.2.md` guidance so those controls feel tactile and clearly distinct.
 
 ## License
 
