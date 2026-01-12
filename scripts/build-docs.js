@@ -7,7 +7,7 @@ const vendorDir = path.join(docsDir, 'vendor');
 
 const files = [
   {
-    src: path.join(root, 'tests', 'fixtures', 'index.html'),
+    src: path.join(root, 'tests', 'fixtures', 'catalog.html'),
     dest: path.join(docsDir, 'index.html'),
   },
   {
