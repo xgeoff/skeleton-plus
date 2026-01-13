@@ -81,6 +81,32 @@
             margin: 0;
             max-width: 700px;
         }
+        .theme-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        @media (max-width: 720px) {
+            .catalog-section {
+                padding: 2.5rem 1.25rem;
+            }
+            .catalog-hero {
+                padding: 2.5rem 1.25rem;
+            }
+            .catalog-card-grid {
+                grid-template-columns: 1fr;
+            }
+            .catalog-card-grid .card {
+                padding: 1.5rem;
+            }
+            .catalog-heading {
+                margin-bottom: 2rem;
+            }
+            .theme-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -89,9 +115,11 @@
         <div class="catalog-hero">
         <div class="row" style="margin-bottom: 3rem;">
             <div class="twelve columns">
-                <button onclick="setTheme('default')" id="theme-default" class="btn btn--primary" style="margin-right: 1rem;">Default Slate</button>
-                <button onclick="setTheme('midnight')" id="theme-midnight" class="btn btn--secondary" style="margin-right: 1rem;">Midnight Dark</button>
-                <button onclick="setTheme('forest')" id="theme-forest" class="btn btn--secondary">Forest Green</button>
+                <div class="theme-buttons">
+                    <button onclick="setTheme('default')" id="theme-default" class="btn btn--primary">Default Slate</button>
+                    <button onclick="setTheme('midnight')" id="theme-midnight" class="btn btn--secondary">Midnight Dark</button>
+                    <button onclick="setTheme('forest')" id="theme-forest" class="btn btn--secondary">Forest Green</button>
+                </div>
             </div>
         </div>
         <span class="label-caps">Theming Engine</span>
