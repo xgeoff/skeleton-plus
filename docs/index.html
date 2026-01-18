@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="skeleton-plus.css" />
     <style>
         .catalog-section {
-            max-width: 1160px;
-            width: min(1120px, 90%);
+            max-width: 1120px;
+            width: 100%;
             margin: 0 auto;
-            padding: 3.5rem clamp(1.5rem, 6vw, 4rem);
+            padding: 2.5rem 1.25rem;
         }
 
         .catalog-heading {
@@ -71,15 +71,131 @@
             }
         }
         .catalog-hero {
-            max-width: 1160px;
-            width: min(1120px, 90%);
+            max-width: 1120px;
+            width: 100%;
             margin: 0 auto;
-            padding: 3rem clamp(1.5rem, 6vw, 4rem);
+            padding: 2.5rem 1.25rem;
             text-align: left;
         }
         .catalog-hero p {
             margin: 0;
             max-width: 700px;
+        }
+        .hero-row {
+            margin-bottom: 3rem;
+        }
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        .card-body-text {
+            font-size: 0.75rem;
+        }
+        .card-action {
+            height: 32px;
+            font-size: 0.85rem;
+        }
+        .card-text-tight {
+            font-size: 0.75rem;
+            margin: 0;
+        }
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .card-icon--primary {
+            background: rgba(99, 102, 241, 0.1);
+        }
+        .card-icon--success {
+            border-radius: 8px;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .card-icon-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #6366f1;
+        }
+        .card-icon-square {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            background: #10b981;
+        }
+        .form-field {
+            margin-bottom: 2rem;
+        }
+        .form-textarea {
+            height: 12rem;
+        }
+        .form-note {
+            padding: 2.5rem;
+            background: rgba(15, 23, 42, 0.03);
+            border-style: dashed;
+            box-shadow: none;
+            margin-bottom: 1.5rem;
+        }
+        .form-note-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .form-note-body {
+            font-size: 0.75rem;
+            margin: 0;
+        }
+        .form-submit {
+            width: 100%;
+        }
+        .alert-stack--first {
+            margin-top: 1rem;
+        }
+        .alert-stack {
+            margin-top: 0.75rem;
+        }
+        .alert-text {
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin: 0;
+            color: var(--sp-text);
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot--info { background: #0ea5e9; }
+        .dot--success { background: #10b981; }
+        .dot--warning { background: #f59e0b; }
+        .badge-row {
+            margin-top: 1.5rem;
+        }
+        .footer-wrap {
+            text-align: center;
+            border-top: 1px solid rgba(15, 23, 42, 0.05);
+            margin-top: 5rem;
+        }
+        .footer-text {
+            font-size: 1rem;
+        }
+        @media (min-width: 900px) {
+            .catalog-section {
+                padding: 3.5rem 2.5rem;
+            }
+            .catalog-hero {
+                padding: 3rem 2.5rem;
+            }
+            .footer-text {
+                font-size: 1.2rem;
+            }
         }
         .theme-buttons {
             display: flex;
@@ -113,7 +229,7 @@
 <div class="container">
     <header class="header-padding">
         <div class="catalog-hero">
-        <div class="row" style="margin-bottom: 3rem;">
+        <div class="row hero-row">
             <div class="twelve columns">
                 <div class="theme-buttons">
                     <button onclick="setTheme('default')" id="theme-default" class="btn btn--primary">Default Slate</button>
@@ -142,7 +258,7 @@
             <div class="row">
                 <div class="six columns">
                     <span class="label-caps">Standard Variants</span>
-                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <div class="button-group">
                         <button class="btn btn--primary">Primary Action</button>
                         <button class="btn btn--secondary">Secondary</button>
                         <button class="btn btn--ghost">Ghost Action</button>
@@ -150,7 +266,7 @@
                 </div>
                 <div class="six columns">
                     <span class="label-caps">Interaction States</span>
-                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <div class="button-group">
                         <button class="btn btn--secondary" disabled>Disabled</button>
                         <button class="btn btn--primary is-loading">Loading</button>
                         <button class="btn btn--danger">Destructive</button>
@@ -168,22 +284,22 @@
         <div class="catalog-card-grid">
             <div class="card">
                 <h3>Standard</h3>
-                <p style="font-size: 1.4rem;">The base card component adapts its background and border to the theme variables.</p>
-                <button class="btn btn--secondary" style="height: 32px; font-size: 1.2rem;">Learn More</button>
+                <p class="card-body-text">The base card component adapts its background and border to the theme variables.</p>
+                <button class="btn btn--secondary card-action">Learn More</button>
             </div>
             <div class="card card--interactive">
-                <div style="width: 40px; height: 40px; background: rgba(99, 102, 241, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
-                    <div style="width: 16px; height: 16px; background: #6366f1; border-radius: 50%;"></div>
+                <div class="card-icon card-icon--primary">
+                    <div class="card-icon-dot"></div>
                 </div>
                 <h3>Interactive</h3>
-                <p style="font-size: 1.4rem; margin: 0;">Lifts on hover and indicates clickability with depth transition.</p>
+                <p class="card-text-tight">Lifts on hover and indicates clickability with depth transition.</p>
             </div>
             <div class="card card--raised">
-                <div style="width: 40px; height: 40px; background: rgba(16, 185, 129, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
-                    <div style="width: 16px; height: 16px; background: #10b981; border-radius: 4px;"></div>
+                <div class="card-icon card-icon--success">
+                    <div class="card-icon-square"></div>
                 </div>
                 <h3>Raised</h3>
-                <p style="font-size: 1.4rem; margin: 0;">Features a stronger constant shadow for higher visual hierarchy.</p>
+                <p class="card-text-tight">Features a stronger constant shadow for higher visual hierarchy.</p>
             </div>
         </div>
     </section>
@@ -196,21 +312,21 @@
         <div class="card">
             <div class="catalog-form-grid">
                 <div>
-                    <div style="margin-bottom: 2rem;">
+                    <div class="form-field">
                         <label class="label-caps">Full Name</label>
                         <input type="text" class="input" placeholder="e.g. Julianne Moore">
                     </div>
-                    <div style="margin-bottom: 2rem;">
+                    <div class="form-field">
                         <label class="label-caps">Email Address</label>
                         <input type="email" class="input" placeholder="julianne@example.com">
                     </div>
                     <div>
                         <label class="label-caps">Message</label>
-                        <textarea class="input" style="height: 12rem;" placeholder="How can we help?"></textarea>
+                        <textarea class="input form-textarea" placeholder="How can we help?"></textarea>
                     </div>
                 </div>
                 <div>
-                    <div style="margin-bottom: 2rem;">
+                    <div class="form-field">
                         <label class="label-caps">Select Option</label>
                         <select class="input">
                             <option>Design Inquiry</option>
@@ -218,11 +334,11 @@
                             <option>General Feedback</option>
                         </select>
                     </div>
-                    <div class="card" style="padding: 2.5rem; background: rgba(15, 23, 42, 0.03); border-style: dashed; box-shadow: none; margin-bottom: 1.5rem;">
-                        <h4 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1rem;">Pure Skeleton Layout</h4>
-                        <p style="font-size: 1.2rem; margin: 0;">This grid uses the classic 12-column Skeleton system. All styling is applied via Skeleton Plus variables.</p>
+                    <div class="card form-note">
+                        <h4 class="form-note-title">Pure Skeleton Layout</h4>
+                        <p class="form-note-body">This grid uses the classic 12-column Skeleton system. All styling is applied via Skeleton Plus variables.</p>
                     </div>
-                    <button class="btn btn--primary" style="width: 100%;">Submit Inquiry</button>
+                    <button class="btn btn--primary form-submit">Submit Inquiry</button>
                 </div>
             </div>
         </div>
@@ -236,22 +352,22 @@
         <div class="catalog-alert-grid">
             <div>
                 <span class="label-caps">Alert Notifications</span>
-                <div class="alert alert--info" style="margin-top: 1rem;">
-                    <span class="dot" style="background: #0ea5e9;"></span>
-                    <p style="font-size: 1.4rem; font-weight: 500; margin: 0; color: var(--sp-text);">Information: System maintenance scheduled.</p>
+                <div class="alert alert--info alert-stack--first">
+                    <span class="dot dot--info"></span>
+                    <p class="alert-text">Information: System maintenance scheduled.</p>
                 </div>
-                <div class="alert alert--success" style="margin-top: 0.75rem;">
-                    <span class="dot" style="background: #10b981;"></span>
-                    <p style="font-size: 1.4rem; font-weight: 500; margin: 0; color: var(--sp-text);">Success: Changes saved successfully.</p>
+                <div class="alert alert--success alert-stack">
+                    <span class="dot dot--success"></span>
+                    <p class="alert-text">Success: Changes saved successfully.</p>
                 </div>
-                <div class="alert alert--warning" style="margin-top: 0.75rem;">
-                    <span class="dot" style="background: #f59e0b;"></span>
-                    <p style="font-size: 1.4rem; font-weight: 500; margin: 0; color: var(--sp-text);">Warning: Review pending approvals.</p>
+                <div class="alert alert--warning alert-stack">
+                    <span class="dot dot--warning"></span>
+                    <p class="alert-text">Warning: Review pending approvals.</p>
                 </div>
             </div>
             <div>
                 <span class="label-caps">Badges & Labels</span>
-                <div style="margin-top: 1.5rem;">
+                <div class="badge-row">
                     <span class="badge">Beta</span>
                     <span class="badge badge--info">System Active</span>
                     <span class="badge badge--success">Verified</span>
@@ -261,8 +377,8 @@
         </div>
     </section>
 
-    <footer class="section-padding" style="text-align: center; border-top: 1px solid rgba(15, 23, 42, 0.05); margin-top: 5rem;">
-        <p style="font-size: 1.4rem;">© 2025 Skeleton-plus. Powered by Pure HTML & CSS Variables.</p>
+    <footer class="section-padding footer-wrap">
+        <p class="footer-text">© 2025 Skeleton-plus. Powered by Pure HTML & CSS Variables.</p>
     </footer>
 </div>
 
